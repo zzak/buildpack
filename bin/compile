@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# This script receives three arguments:
+# - BUILD_DIR
+# - CACHE_DIR
+# - ENV_DIR
+#
+# Inside `ENV_DIR` is a file for each of the application's config variables.
+#
+# After the `compile` script is executed, any changes made to `BUILD_DIR` will
+# be packaged into the slug.
