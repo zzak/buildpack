@@ -4,3 +4,5 @@
 # with this buildpack.
 #
 # We should return 0 if the app is compatible, otherwise exit code 1.
+
+return 0
