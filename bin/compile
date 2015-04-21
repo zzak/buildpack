@@ -26,7 +26,6 @@ mkdir -p "$BUILD_DIR/vendor"
 #chmod 755 "$BUILD_DIR/vendor/bin/qrintf-pp"
 #export CPP="$BUILD_DIR/vendor/qrintf-gcc"
 
-cd ..
 git clone git://github.com/jemalloc/jemalloc.git
 cd jemalloc
 ./autogen.sh
