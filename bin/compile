@@ -42,4 +42,23 @@ cd trusterd
 make
 make install PREFIX="$BUILD_DIR/vendor"
 
+mkdir -p "$BUILD_DIR/conf"
+echo '
+SERVER_NAME = "Trusterd"
+SERVER_VERSION = "0.0.1"
+SERVER_DESCRIPTION = "#{SERVER_NAME}/#{SERVER_VERSION}"
+
+root_dir = "$BUILD_DIR/vendor/trusterd"
+
+s = HTTP2::Server.new({
+  :port           => "#{ENV['PORT']}",
+  :document_root  => "#{root_dir}/htdocs",
+  :server_name    => SERVER_DESCRIPTION,
+  :worker         => "auto",
+  :tls => false
+})
+
+s.run
+' > $BUILD_DIR/conf/trusterd.conf.rb
+
 exit 0
