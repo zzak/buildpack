@@ -30,6 +30,6 @@ git clone git://github.com/jemalloc/jemalloc.git
 cd jemalloc
 ./autogen.sh
 ./configure --enable-autogen --prefix="$BUILD_DIR/vendor"
-make && make install
+make dist && make && make install
 
 exit 0
