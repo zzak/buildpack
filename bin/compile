@@ -24,6 +24,8 @@ mkdir -p "$BUILD_DIR/vendor"
 #export CPP="$BUILD_DIR/vendor/qrintf-gcc"
 
 gem install rake
+ruby -v
+gem -v
 
 git clone git://github.com/jemalloc/jemalloc.git
 cd jemalloc
