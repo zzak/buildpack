@@ -16,14 +16,15 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-mkdir -p "$BUILD_DIR/bin"
-git clone git://github.com/h2o/qrintf.git
-cd qrintf/
-make install PREFIX="$BUILD_DIR/vendor"
-chmod 755 "$BUILD_DIR/vendor/bin/qrintf-gcc"
-chmod 755 "$BUILD_DIR/vendor/bin/qrintf-gcc-wrapper"
-chmod 755 "$BUILD_DIR/vendor/bin/qrintf-pp"
-export CPP="$BUILD_DIR/vendor/qrintf-gcc"
+mkdir -p "$BUILD_DIR/vendor"
+
+#git clone git://github.com/h2o/qrintf.git
+#cd qrintf/
+#make install PREFIX="$BUILD_DIR/vendor"
+#chmod 755 "$BUILD_DIR/vendor/bin/qrintf-gcc"
+#chmod 755 "$BUILD_DIR/vendor/bin/qrintf-gcc-wrapper"
+#chmod 755 "$BUILD_DIR/vendor/bin/qrintf-pp"
+#export CPP="$BUILD_DIR/vendor/qrintf-gcc"
 
 cd ..
 git clone git://github.com/jemalloc/jemalloc.git
