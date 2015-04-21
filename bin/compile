@@ -18,7 +18,7 @@ ENV_DIR=$3
 
 mkdir -p "$BUILD_DIR/bin"
 git clone git://github.com/h2o/qrintf.git
-cd qprintf/
+cd qrintf/
 make install PREFIX="$BUILD_DIR/vendor"
 export CPP="$BUILD_DIR/vendor/qrintf-gcc"
 
