@@ -22,4 +22,10 @@ cd qrintf/
 make install PREFIX="$BUILD_DIR/vendor"
 export CPP="$BUILD_DIR/vendor/qrintf-gcc"
 
+cd ..
+git clone git://github.com/jemalloc/jemalloc.git
+cd jemalloc
+./configure PREFIX="$BUILD_DIR/vendor"
+make && make install
+
 exit 0
