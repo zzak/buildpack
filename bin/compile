@@ -23,6 +23,15 @@ mkdir -p "$BUILD_DIR/vendor"
 #make install PREFIX="$BUILD_DIR/vendor"
 #export CPP="$BUILD_DIR/vendor/qrintf-gcc"
 
+git clone git://github.com/ruby/ruby.git
+cd ruby/
+git checkout ruby_2_2
+autoconf
+./configure --disable-install-doc --prefix="$BUILD_DIR/vendor"
+make && make install
+
+ls "$BUILD_DIR/vendor"
+
 gem install rake
 ruby -v
 gem -v
