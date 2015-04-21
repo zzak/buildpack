@@ -40,7 +40,7 @@ cd ..
 git clone git://github.com/trusterd/trusterd.git
 cd trusterd
 make
-make install PREFIX="$BUILD_DIR/vendor"
+make install INSTALL_PREFIX="$BUILD_DIR/vendor"
 
 mkdir -p "$BUILD_DIR/conf"
 echo "
