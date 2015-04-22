@@ -39,6 +39,20 @@ make install_bin install_include install_lib
 
 cd ..
 git clone git://github.com/trusterd/trusterd.git
+
+echo "
+MRuby::Build.new do |conf|
+  toolchain :gcc
+  conf.gembox :github => 'matrusmoto-r/trusterd'
+
+  conf.cc do |cc|
+    cc.command = ENV['CC'] || 'qrintf-gcc'
+  end
+  conf.linker do |linker|
+    linker.flags_after_libraries << '-ljemalloc'
+  end
+end" > "trusterd/build_config.rb"
+
 cd trusterd
 make
 make install INSTALL_PREFIX="$BUILD_DIR/vendor"
