@@ -43,7 +43,7 @@ git clone git://github.com/trusterd/trusterd.git
 echo "
 MRuby::Build.new do |conf|
   toolchain :gcc
-  conf.gembox :github => 'matrusmoto-r/trusterd'
+  conf.gem :github => 'matrusmoto-r/trusterd'
 
   conf.cc do |cc|
     cc.command = ENV['CC'] || 'qrintf-gcc'
