@@ -45,7 +45,6 @@ make install INSTALL_PREFIX="$BUILD_DIR/vendor"
 mkdir -p "$BUILD_DIR/conf"
 echo "
 HTTP2::Server.new({
-  :port           => ENV['PORT'],
   :document_root  => '$BUILD_DIR',
   :server_name    => 'Trusterd/0.0.1',
   :worker         => 'auto',
