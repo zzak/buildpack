@@ -18,11 +18,6 @@ ENV_DIR=$3
 
 mkdir -p "$BUILD_DIR/vendor"
 
-#git clone git://github.com/h2o/qrintf.git
-#cd qrintf/
-#make install PREFIX="$BUILD_DIR/vendor"
-#export CPP="$BUILD_DIR/vendor/qrintf-gcc"
-
 wget https://s3-external-1.amazonaws.com/heroku-buildpack-ruby/cedar-14/ruby-2.2.2.tgz
 tar -xvzf ruby-2.2.2.tgz -C "$BUILD_DIR/vendor"
 export PATH="$BUILD_DIR/vendor/bin:$PATH"
@@ -35,6 +30,12 @@ cd jemalloc
 ./autogen.sh
 ./configure --enable-autogen --prefix="$BUILD_DIR/vendor"
 make install_bin install_include install_lib
+
+cd ..
+git clone git://github.com/h2o/qrintf.git
+cd qrintf/
+make install PREFIX="$BUILD_DIR/vendor"
+export CPP="$BUILD_DIR/vendor/qrintf-gcc"
 
 cd ..
 git clone git://github.com/trusterd/trusterd.git
