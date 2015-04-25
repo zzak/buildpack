@@ -37,9 +37,13 @@ make && make install
 #make install PREFIX="$BUILD_DIR/vendor"
 #export CC="$BUILD_DIR/vendor/qrintf-gcc"
 
+echo 'whats in vendor:'
 ls $BUILD_DIR/vendor
+echo 'whats in vendor/include:'
 ls $BUILD_DIR/vendor/include
+echo 'whats in vendor/lib:'
 ls $BUILD_DIR/vendor/lib
+echo 'whats in vendor/share:'
 ls $BUILD_DIR/vendor/share
 export CPPPATH="$BUILD_DIR/vendor/include:$CPPPATH"
 export CPATH="$BUILD_DIR/vendor/include:$CPATH"
