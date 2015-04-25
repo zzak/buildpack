@@ -29,7 +29,7 @@ git clone git://github.com/jemalloc/jemalloc.git
 cd jemalloc
 ./autogen.sh
 ./configure --enable-autogen --prefix="$BUILD_DIR/vendor"
-make dist && make install
+make && make install
 
 #cd ..
 #git clone git://github.com/h2o/qrintf.git
