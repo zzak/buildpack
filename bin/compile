@@ -31,11 +31,11 @@ cd jemalloc
 ./configure --enable-autogen --prefix="$BUILD_DIR/vendor"
 make install_bin install_include install_lib
 
-#cd ..
-#git clone git://github.com/h2o/qrintf.git
-#cd qrintf/
-#make install PREFIX="$BUILD_DIR/vendor"
-#export CC="$BUILD_DIR/vendor/qrintf-gcc"
+cd ..
+git clone git://github.com/h2o/qrintf.git
+cd qrintf/
+make install PREFIX="$BUILD_DIR/vendor"
+export CC="$BUILD_DIR/vendor/qrintf-gcc"
 
 cd ..
 git clone git://github.com/trusterd/trusterd.git
