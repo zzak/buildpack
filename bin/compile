@@ -37,6 +37,10 @@ make dist && make install
 #make install PREFIX="$BUILD_DIR/vendor"
 #export CC="$BUILD_DIR/vendor/qrintf-gcc"
 
+ls $BUILD_DIR/vendor
+ls $BUILD_DIR/vendor/include
+ls $BUILD_DIR/vendor/lib
+ls $BUILD_DIR/vendor/share
 export CPPPATH="$BUILD_DIR/vendor/include:$CPPPATH"
 export CPATH="$BUILD_DIR/vendor/include:$CPATH"
 export LIBRARY_PATH="$BUILD_DIR/vendor/lib:$LIBRARY_PATH"
