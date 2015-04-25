@@ -43,7 +43,20 @@ git clone git://github.com/trusterd/trusterd.git
 echo "
 MRuby::Build.new do |conf|
   toolchain :gcc
-  conf.gem :github => 'matrusmoto-r/trusterd'
+  conf.gem :github => 'matsumoto-r/mruby-simplehttp'
+  conf.gem :github => 'trusterd/mruby-http2'
+  conf.gem :github => 'iij/mruby-io'
+  conf.gem :github => 'iij/mruby-dir'
+  conf.gem :github => 'iij/mruby-socket'
+  conf.gem :github => 'iij/mruby-pack'
+  conf.gem :github => 'iij/mruby-process'
+  conf.gem :github => 'mattn/mruby-onig-regexp'
+  conf.gem :github => 'mattn/mruby-json'
+  conf.gem :github => "kou/mruby-pp"
+  conf.gem :github => "trusterd/mruby-trusterd-basicauth"
+  conf.gem :github => "qtkmz/mruby-crypt"
+  conf.gem "../mrblib/trusterd-ext"
+  conf.gembox 'full-core'
 
   conf.cc do |cc|
     cc.command = ENV['CC'] || 'qrintf-gcc'
