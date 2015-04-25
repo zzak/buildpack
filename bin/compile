@@ -37,6 +37,11 @@ make install_bin install_include install_lib
 #make install PREFIX="$BUILD_DIR/vendor"
 #export CC="$BUILD_DIR/vendor/qrintf-gcc"
 
+export CPPPATH="$BUILD_DIR/vendor/include:$CPPPATH"
+export CPATH="$BUILD_DIR/vendor/include:$CPATH"
+export LIBRARY_PATH="$BUILD_DIR/vendor/lib:$LIBRARY_PATH"
+export LD_LIBRARY_PATH="$BUILD_DIR/vendor/lib:$LD_LIBRARY_PATH"
+
 cd ..
 git clone git://github.com/trusterd/trusterd.git
 
