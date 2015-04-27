@@ -31,20 +31,11 @@ cd jemalloc
 ./configure --enable-autogen --prefix="$BUILD_DIR/vendor"
 make && make install
 
-#cd ..
-#git clone git://github.com/h2o/qrintf.git
-#cd qrintf/
-#make install PREFIX="$BUILD_DIR/vendor"
-#export CC="$BUILD_DIR/vendor/qrintf-gcc"
-
-echo 'whats in vendor:'
-ls $BUILD_DIR/vendor
-echo 'whats in vendor/include:'
-ls $BUILD_DIR/vendor/include
-echo 'whats in vendor/lib:'
-ls $BUILD_DIR/vendor/lib
-echo 'whats in vendor/share:'
-ls $BUILD_DIR/vendor/share
+cd ..
+git clone git://github.com/h2o/qrintf.git
+cd qrintf/
+make install PREFIX="$BUILD_DIR/vendor"
+export CC="$BUILD_DIR/vendor/bin/qrintf-gcc"
 export CPPPATH="$BUILD_DIR/vendor/include:$CPPPATH"
 export CPATH="$BUILD_DIR/vendor/include:$CPATH"
 export LIBRARY_PATH="$BUILD_DIR/vendor/lib:$LIBRARY_PATH"
@@ -72,7 +63,7 @@ MRuby::Build.new do |conf|
   conf.gembox 'full-core'
 
   conf.cc do |cc|
-    #cc.command = ENV['CC'] || 'qrintf-gcc'
+    cc.command = ENV['CC'] || 'qrintf-gcc'
   end
   conf.linker do |linker|
     linker.flags_after_libraries << '-ljemalloc'
