@@ -1,0 +1,3 @@
+export PATH=$BUILD_DIR/vendor/bin:$PATH
+export LD_LIBRARY_PATH=$BUILD_DOR/vendor/lib:LD_LIBRARY_PATH
+export LIBRARY_PATH=$BUILD_DIR/vendor/lib:LIBRARY_PATH
