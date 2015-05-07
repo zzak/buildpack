@@ -77,8 +77,8 @@ make install INSTALL_PREFIX="$BUILD_DIR/vendor"
 # populate profile.d
 PROFILE_PATH="$BUILD_DIR/.profile.d/path.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo "export PATH=\"${BUILD_DIR}/vendor/bin:$PATH\"" >> $PROFILE_PATH
-echo "export LD_LIBRARY_PATH=\"${BUILD_DIR}/vendor/lib:$LD_LIBRARY_PATH\"" >> $PROFILE_PATH
-echo "export LIBRARY_PATH=\"${BUILD_DIR}/vendor/lib:$LIBRARY_PATH\"" >> $PROFILE_PATH
+echo "export PATH=\"vendor/bin:$PATH\"" >> $PROFILE_PATH
+echo "export LD_LIBRARY_PATH=\"vendor/lib:$LD_LIBRARY_PATH\"" >> $PROFILE_PATH
+echo "export LIBRARY_PATH=\"vendor/lib:$LIBRARY_PATH\"" >> $PROFILE_PATH
 
 exit 0
