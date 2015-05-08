@@ -59,6 +59,7 @@ MRuby::Build.new do |conf|
   conf.gem :github => 'kou/mruby-pp'
   conf.gem :github => 'trusterd/mruby-trusterd-basicauth'
   conf.gem :github => 'qtkmz/mruby-crypt'
+  conf.gem :github => 'iij/mruby-env'
   conf.gem '../mrblib/trusterd-ext'
   conf.gembox 'full-core'
 
