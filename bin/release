@@ -4,5 +4,5 @@
 cat << EOF
 ---
 default_process_types:
-  web: trusterd conf/trusterd.conf.rb --port=$PORT
+  http2: trusterd conf/trusterd.conf.rb --port=$PORT
 EOF
