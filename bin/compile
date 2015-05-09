@@ -10,6 +10,8 @@
 # After the `compile` script is executed, any changes made to `BUILD_DIR` will
 # be packaged into the slug.
 
+set -e
+
 echo 'Compiling..'
 
 BUILD_DIR=$1
